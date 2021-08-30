@@ -1,4 +1,4 @@
-import { wrapRootElement as rootWrapper } from "./root-wrapper";
+import { wrapPageElement as pageWrapper } from "./page-wrapper";
 import "./src/assets/styles/main.css";
 
-export const wrapRootElement = rootWrapper;
+export const wrapPageElement = pageWrapper;
