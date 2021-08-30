@@ -19,7 +19,8 @@ Variables
   --color-grass-dark: rgb(121, 146, 32);
   --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
-  --ff-primary: "Nunito", sans-serif;
+  /* --ff-primary: "Nunito", sans-serif; */
+  --ff-primary: sans-serif;
 
   --transition: all 0.3s linear;
   --transition-fast: all 0.15s linear;

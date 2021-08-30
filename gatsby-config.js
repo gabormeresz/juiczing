@@ -29,19 +29,19 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: "Nunito",
-              variants: ["400", "700", "800"],
-            },
-          ],
-        },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-webfonts`,
+    //   options: {
+    //     fonts: {
+    //       google: [
+    //         {
+    //           family: "Nunito",
+    //           variants: ["400", "700", "800"],
+    //         },
+    //       ],
+    //     },
+    //   },
+    // },
     // `gatsby-plugin-gatsby-cloud`,
     // `gatsby-plugin-offline`,
   ],
