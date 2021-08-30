@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Seo from "../components/Seo";
 
 const IndexPage = () => (
-  <Wrapper>
+  <>
     <Seo title="Home" />
     <div className="">
       <StaticImage
@@ -23,9 +23,9 @@ const IndexPage = () => (
         layout="fullWidth"
       />
     </div>
-  </Wrapper>
+  </>
 );
 
 export default IndexPage;
 
-const Wrapper = styled.div``;
+// const Wrapper = styled.div``;
