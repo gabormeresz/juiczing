@@ -78,7 +78,7 @@ const Wrapper = styled.aside`
     color: var(--color-primary-1);
     cursor: pointer;
   }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     .sidebar {
       transform: translateX(-100%);
     }

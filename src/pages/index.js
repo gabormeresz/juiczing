@@ -1,8 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Seo from "../components/Seo";
+import RecipeCategories from "../components/RecipeCategories";
 
 const IndexPage = () => (
   <>
@@ -15,6 +15,7 @@ const IndexPage = () => (
         layout="fullWidth"
       />
     </div>
+    <RecipeCategories />
     <div className="">
       <StaticImage
         src="../assets/images/juiczing_home_2.png"
@@ -27,5 +28,3 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
-
-// const Wrapper = styled.div``;
