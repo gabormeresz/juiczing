@@ -2,7 +2,8 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Seo from "../components/Seo";
-import RecipeCategories from "../components/RecipeCategories";
+import RecipeCategories from "../components/sections/RecipeCategories";
+import Nutrients from "../components/sections/Nutrients";
 
 const IndexPage = () => (
   <>
@@ -16,6 +17,7 @@ const IndexPage = () => (
       />
     </div>
     <RecipeCategories />
+    <Nutrients />
     <div className="">
       <StaticImage
         src="../assets/images/juiczing_home_2.png"

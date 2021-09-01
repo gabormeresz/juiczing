@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const query = graphql`
   {
-    allContentfulCategory {
+    allContentfulCategory(sort: { fields: order, order: ASC }) {
       nodes {
         name
         path
@@ -50,8 +50,6 @@ const RecipeCategories = () => {
 export default RecipeCategories;
 
 const Wrapper = styled.section`
-  display: block;
-
   .categories {
     display: grid;
     padding: 40px 20px;

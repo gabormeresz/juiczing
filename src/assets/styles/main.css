@@ -86,7 +86,7 @@ h4 {
   letter-spacing: var(--spacing);
   text-transform: uppercase;
   line-height: 1.25;
-  margin-bottom: 0.75rem;
+  /* margin-bottom: 0.75rem; */
 }
 h1 {
   font-size: 3rem;
