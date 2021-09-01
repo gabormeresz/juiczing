@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from "gatsby";
 
 const types = ["vegan", "vegetarian", "omnivore"];
 
@@ -30,12 +31,12 @@ const Nutrients = () => {
           <div className="types">
             {types.map((type, index) => {
               return (
-                <div key={index} className="type">
+                <Link to="/" key={index} className="type">
                   <h4>
                     {type} <span>nutrition</span>
                   </h4>
                   <IoIosArrowRoundForward size={"1.5em"} />
-                </div>
+                </Link>
               );
             })}
           </div>

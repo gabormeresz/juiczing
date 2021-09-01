@@ -87,8 +87,11 @@ const Wrapper = styled.section`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
+    transition: var(--transition-fast);
   }
-
+  .category:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
   @media screen and (min-width: 768px) {
     .categories {
       grid-template-columns: 1fr 1fr 1fr;
