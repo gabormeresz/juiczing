@@ -15,7 +15,7 @@ const Ebook = () => {
         </h3>
         <div className="image">
           <StaticImage
-            src="../assets/images/ebook.png"
+            src="../../assets/images/ebook.png"
             alt="detox guide book"
             placeholder="blurred"
             layout="fullWidth"

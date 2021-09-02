@@ -10,7 +10,7 @@ const ArticlePromo = () => {
       <div className="image-wrapper">
         <StaticImage
           className="image"
-          src="../assets/images/juiczing_home_2.png"
+          src="../../assets/images/juiczing_home_2.png"
           alt="fresh vegetable drink"
           placeholder="blurred"
           layout="constrained"
