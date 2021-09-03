@@ -60,8 +60,6 @@ const Wrapper = styled.div`
     align-items: center;
     padding-top: 10px;
   }
-  .btn-transparent {
-  }
   .arrow {
     padding-bottom: 1px;
     color: var(--color-grass-light);

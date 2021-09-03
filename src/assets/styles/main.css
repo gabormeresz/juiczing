@@ -13,6 +13,8 @@ Variables
   --color-primary-6: rgb(255, 255, 255);
   --color-grass-light: rgb(174, 203, 64);
   --color-grass-dark: rgb(121, 146, 32);
+  --color-red-dark: hsl(360, 67%, 44%);
+  --color-red-light: hsl(360, 71%, 66%);
   --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
   --ff-primary: "Nunito", sans-serif;
@@ -46,8 +48,6 @@ Variables
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-green-dark: hsl(125, 67%, 35%);
-  --clr-red-dark: hsl(360, 67%, 44%);
-  --clr-red-light: hsl(360, 71%, 66%);
   --clr-white: #fff;
 }
 /*
@@ -86,7 +86,6 @@ h4 {
   letter-spacing: var(--spacing);
   text-transform: uppercase;
   line-height: 1.25;
-  /* margin-bottom: 0.75rem; */
 }
 h1 {
   font-size: 3rem;
@@ -100,9 +99,7 @@ h3 {
 h4 {
   font-size: 0.875rem;
 }
-p {
-  margin-bottom: 1.25rem;
-}
+
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 4rem;
@@ -118,12 +115,6 @@ p {
   }
   body {
     font-size: 1rem;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    line-height: 1;
   }
 }
 
@@ -164,7 +155,6 @@ p {
   outline: none;
   text-transform: uppercase;
   color: var(--color-grass-light);
-  /* padding: 0.8rem 1.5rem; */
   letter-spacing: var(--spacing);
   font-weight: 400;
   -webkit-transition: var(--transition-fast);

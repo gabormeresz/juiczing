@@ -79,6 +79,7 @@ const Wrapper = styled.section`
     padding: 20px 40px;
     width: 100%;
     background-color: var(--color-primary-5);
+    transition: var(--transition-fast);
   }
 
   .type:hover {
