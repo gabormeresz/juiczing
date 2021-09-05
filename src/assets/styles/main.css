@@ -14,7 +14,7 @@ Variables
   --color-grass-light: rgb(174, 203, 64);
   --color-grass-dark: rgb(121, 146, 32);
   --color-red-dark: hsl(360, 67%, 44%);
-  --color-red-light: hsl(360, 71%, 66%);
+  --color-red-light: hsl(0, 96%, 70%);
   --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
   --ff-primary: "Nunito", sans-serif;

@@ -202,7 +202,7 @@ const Wrapper = styled.div`
   input,
   select {
     border: none;
-    outline: none;
+    outline: 1px solid var(--color-primary-4);
     height: 40px;
     width: 100%;
     font-size: 1rem;
@@ -267,7 +267,7 @@ const Wrapper = styled.div`
     align-self: flex-end;
     font-size: 0.75rem;
     font-weight: 400;
-    color: var(--color-primary-2);
+    color: var(--color-red-light);
   }
 
   .range-feedback-container {
