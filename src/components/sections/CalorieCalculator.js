@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 
 import CalorieForm from "./CalorieCalculatorForm";
@@ -6,9 +6,22 @@ import CalorieCalc from "../../assets/helpers/calorieCalc";
 
 const CalorieCalculator = () => {
   const [calculatedCalories, setCalculatedCalories] = useState(undefined);
+  const resultsRef = useRef();
 
   const calculateHandler = values => {
-    setCalculatedCalories(CalorieCalc(values));
+    console.log(values);
+    
+    if (values) {
+      setCalculatedCalories(CalorieCalc(values));
+    } else {
+      setCalculatedCalories(null);
+    }
+
+    resultsRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: `${values ? "end" : "start"}`,
+      inline: "nearest",
+    });
   };
 
   return (
@@ -19,8 +32,8 @@ const CalorieCalculator = () => {
           <br />
           <span>to loose weight?</span>
         </h2>
-        <div className="calculator-container">
-          <CalorieForm onCalculate={calculateHandler} />
+        <div className="calculator-container" ref={resultsRef}>
+          <CalorieForm onCalculate={calculateHandler} resultsRef={resultsRef} />
 
           <div className="results-container">
             <div className="result">
@@ -83,7 +96,7 @@ export default CalorieCalculator;
 const Wrapper = styled.section`
   .section-container {
     background-color: var(--color-primary-5);
-    padding: 30px 20px 40px 20px;
+    padding: 30px 20px 0px 20px;
   }
   h2 {
     font-weight: 400;
@@ -106,7 +119,7 @@ const Wrapper = styled.section`
   .calculator-container {
     display: grid;
     gap: 20px;
-    padding-top: 40px;
+    padding: 40px 0px;
   }
 
   .results-container {
@@ -132,22 +145,20 @@ const Wrapper = styled.section`
 
   @media screen and (min-width: 768px) {
     .section-container {
-      padding: 30px 80px 40px 80px;
+      padding: 30px 80px 0px 80px;
     }
     .calculator-container {
       grid-template-columns: 1fr 1fr;
       gap: 50px;
     }
-    .results-container {
-      /* min-height: 300px; */
-    }
+
     h2 {
       font-size: 2rem;
     }
   }
   @media screen and (min-width: 1200px) {
     .section-container {
-      padding: 30px 120px 40px 120px;
+      padding: 30px 120px 0px 120px;
     }
     .calculator-container {
       gap: 100px;
