@@ -22,6 +22,7 @@ Variables
   --transition: all 0.3s linear;
   --transition-fast: all 0.15s linear;
   --spacing: 0.2rem;
+  --spacing-mild: 0.1rem;
   --radius: 0.25rem;
   --max-width: 1170px;
   --fixed-width: 700px;

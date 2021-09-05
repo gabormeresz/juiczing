@@ -146,7 +146,7 @@ const CalorieForm = props => {
               <div className="sex type">
                 <label htmlFor="sex">Sex *</label>
                 <Field name="sex" component="select">
-                  <option defaultValue>{"<please select>"}</option>
+                  <option defaultValue>select sex</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                 </Field>
