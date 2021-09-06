@@ -17,6 +17,7 @@ Variables
   --color-red-light: hsl(0, 96%, 70%);
   --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-dark: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --shadow-dark-intensive: 3px 3px 12px rgba(0, 0, 0, 1);
   --ff-primary: "Nunito", sans-serif;
 
   --transition: all 0.3s linear;
