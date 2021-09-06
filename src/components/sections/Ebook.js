@@ -22,7 +22,7 @@ const Ebook = () => {
           />
         </div>
         <div className="btn-container">
-          <button className="btn">download now</button>
+          <button className="btn">coming soon...</button>
         </div>
       </div>
     </Wrapper>

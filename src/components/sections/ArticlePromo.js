@@ -18,10 +18,12 @@ const ArticlePromo = () => {
         />
         <div className="text">
           <h3>how to make your green juice super nutritious?</h3>
-          <Link to="/" className="link">
-            <button className="btn-transparent">read article</button>
+          {/* <Link to="/" className="link"> */}
+          <div className="link">
+            <button className="btn-transparent">coming soon...</button>
             <IoIosArrowRoundForward className="arrow" size={"1.5em"} />
-          </Link>
+          </div>
+          {/* </Link> */}
         </div>
       </div>
     </Wrapper>
