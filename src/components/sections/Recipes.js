@@ -48,7 +48,7 @@ const query = graphql`
   }
 `;
 
-const Recipes = ({ showAll, showFilter, initialCategory }) => {
+const Recipes = ({ showAll, showFilter, initialCategory, initialTag }) => {
   const data = useStaticQuery(query);
   const initialRecipes = showAll
     ? data.allRecipes.nodes
@@ -59,11 +59,9 @@ const Recipes = ({ showAll, showFilter, initialCategory }) => {
   const categories = ["all", ...data.allCategories.distinct];
 
   const [activeFilters, setActiveFilters] = useState({
-    tagFilter: tags[0],
+    tagFilter: initialTag || tags[0],
     catFilter: initialCategory || categories[0],
   });
-
-  console.log(initialCategory);
 
   useEffect(() => {
     let newRecipes;
@@ -91,12 +89,13 @@ const Recipes = ({ showAll, showFilter, initialCategory }) => {
     setRecipes(newRecipes);
   }, [activeFilters]);
 
-  console.log(recipes);
-  console.log(activeFilters);
-  console.log(tags);
-
   return (
     <Wrapper>
+      {!showAll && (
+        <div className="header">
+          <h2>juiczing recipes</h2>
+        </div>
+      )}
       <div className={`recipes-container ${showFilter ? "showFilter" : ""}`}>
         {showFilter && (
           <div className="filter-container">
@@ -218,6 +217,14 @@ const Wrapper = styled.section`
 
   .recipes-container.showFilter {
     display: grid;
+  }
+  .header {
+    padding: 4.5rem 2rem 0rem 2rem;
+  }
+  .header h2 {
+    /* font-size: 1.5rem; */
+    font-weight: 400;
+    text-align: center;
   }
 
   .recipes-list {

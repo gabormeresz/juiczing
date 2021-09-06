@@ -38,9 +38,13 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
             <p className="recipe-tags">
               <span>Tags </span>
               {tags.map((tag, index) => {
-                const slug = slugify(tag, { lower: true });
                 return (
-                  <Link key={index} to={`/tags/${slug}`}>
+                  <Link
+                    key={index}
+                    to="/recipes"
+                    className="category"
+                    state={{ tag }}
+                  >
                     {tag}
                   </Link>
                 );

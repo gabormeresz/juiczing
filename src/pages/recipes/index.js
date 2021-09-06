@@ -11,6 +11,7 @@ const recipesPage = props => {
         showAll
         showFilter
         initialCategory={props.location.state?.category}
+        initialTag={props.location.state?.tag}
       />
     </>
   );
