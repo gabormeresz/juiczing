@@ -13,7 +13,7 @@ const ArticlePromo = () => {
           src="../../assets/images/juiczing_home_2.png"
           alt="fresh vegetable drink"
           placeholder="blurred"
-          layout="constrained"
+          layout="fullWidth"
           objectPosition="left"
         />
         <div className="text">
@@ -66,8 +66,6 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    .image {
-    }
     .text {
       padding: 20px 55% 20px 40px;
     }
