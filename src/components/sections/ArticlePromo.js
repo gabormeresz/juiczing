@@ -2,7 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 
 const ArticlePromo = () => {
   return (
