@@ -1,12 +1,18 @@
 import React from "react";
 
 import Seo from "../../components/Seo";
+import Recipes from "../../components/sections/Recipes";
 
-const recipesPage = () => {
+const recipesPage = props => {
+
   return (
     <>
       <Seo title="Recipes" />
-      <div>Recipes page</div>
+      <Recipes
+        showAll
+        showFilter
+        initialCategory={props.location.state.category}
+      />
     </>
   );
 };

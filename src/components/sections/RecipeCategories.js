@@ -9,7 +9,6 @@ const query = graphql`
     allContentfulCategory(sort: { fields: order, order: ASC }) {
       nodes {
         name
-        path
         alt
         image {
           gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
@@ -28,10 +27,17 @@ const RecipeCategories = () => {
     <Wrapper>
       <div className="categories">
         {categories.map((category, index) => {
-          const { path, alt, name, image } = category;
+          const { alt, name, image } = category;
+          // const initialCategory = name;
+          // console.log(typeof name);
 
           return (
-            <Link key={index} to={path} className="category">
+            <Link
+              key={index}
+              to="/recipes"
+              className="category"
+              state={{ category: name }}
+            >
               <GatsbyImage className="img" alt={alt} image={getImage(image)} />
               <div className="overlay"></div>
               <h3>

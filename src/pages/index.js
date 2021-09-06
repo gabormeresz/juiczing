@@ -15,7 +15,7 @@ const IndexPage = () => (
     <RecipeCategories />
     <Nutrients />
     <ArticlePromo />
-    <Recipes linkToAll />
+    <Recipes />
     <CalorieCalculator />
   </>
 );
