@@ -127,9 +127,6 @@ export const query = graphql`
 export default RecipeTemplate;
 
 const Wrapper = styled.div`
-  .recipe-page {
-    /* padding: 20px 20px; */
-  }
 
   .recipe-info {
     display: grid;
@@ -139,7 +136,6 @@ const Wrapper = styled.div`
   .recipe-hero {
     display: grid;
     gap: 2rem;
-
     padding: 3rem 2rem;
   }
 
