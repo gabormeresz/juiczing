@@ -10,7 +10,9 @@ const Footer = () => {
       <Ebook />
       <section className="footer">
         <img src={logo} alt="juiczing logo" className="footer-logo" />
-        <h4>all rights reserved | {new Date().getFullYear()}</h4>
+        <h4>
+          &copy; {new Date().getFullYear()} Gábor Merész | All rights reserved
+        </h4>
       </section>
     </Wrapper>
   );
@@ -30,8 +32,8 @@ const Wrapper = styled.footer`
   h4 {
     margin-top: 0rem;
     color: var(--color-primary-6);
-    font-weight: normal;
-    text-transform: uppercase;
+    font-weight: 400;
+    text-transform: none;
   }
   .footer-logo {
     height: 80px;
