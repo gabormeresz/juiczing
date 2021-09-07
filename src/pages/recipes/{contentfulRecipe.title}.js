@@ -2,12 +2,14 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 
 import Seo from "../../components/Seo";
 
 const RecipeTemplate = ({ pageContext: { title }, data }) => {
   const {
     // title,
+    descriptionRich,
     description: { description },
     details: { ingredients, instructions, tags, nutrition },
     image,
@@ -25,7 +27,9 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
           <GatsbyImage image={pathToImage} alt={title} className="about-img" />
           <article className="recipe-info">
             <h2>{title}</h2>
-            <p>{description}</p>
+            <div className="recipe-description">
+              {descriptionRich && renderRichText(descriptionRich)}
+            </div>
 
             {/* tags */}
             <p className="recipe-tags">
@@ -97,6 +101,9 @@ export const query = graphql`
       description {
         description
       }
+      descriptionRich {
+        raw
+      }
       details {
         ingredients
         instructions
@@ -162,6 +169,9 @@ const Wrapper = styled.div`
     padding-top: 0rem;
     display: grid;
     gap: 2.5rem 5rem;
+  }
+  .recipe-description p {
+    padding: 0.5rem 0;
   }
 
   @media screen and (min-width: 768px) {
