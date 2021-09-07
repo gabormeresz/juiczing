@@ -12,6 +12,7 @@ Variables
   --color-primary-5: rgb(242, 248, 248);
   --color-primary-6: rgb(255, 255, 255);
   --color-grass-light: rgb(174, 203, 64);
+  --color-grass-light-transparent: rgba(174, 203, 64, 0.7);
   --color-grass-dark: rgb(121, 146, 32);
   --color-red-dark: hsl(360, 67%, 44%);
   --color-red-light: hsl(0, 96%, 70%);
