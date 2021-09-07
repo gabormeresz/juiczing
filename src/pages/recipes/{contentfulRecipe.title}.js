@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import slugify from "slugify";
 
 import Seo from "../../components/Seo";
 
@@ -14,12 +13,6 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
     image,
   } = data.contentfulRecipe;
   const pathToImage = getImage(image);
-
-  console.log(data);
-  console.log(nutrition);
-  console.log(title);
-  console.log(description);
-  console.log(tags);
 
   const { calories, carbohydrates, fiber, fat, protein, sugar } = nutrition;
 
@@ -127,7 +120,6 @@ export const query = graphql`
 export default RecipeTemplate;
 
 const Wrapper = styled.div`
-
   .recipe-info {
     display: grid;
     gap: 1rem;
