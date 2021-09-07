@@ -91,6 +91,8 @@ const Wrapper = styled.div`
   }
   h1 {
     color: var(--color-primary-6);
+    font-size: 2rem;
+    text-align: center;
   }
   h1 span {
     font-weight: 300;
@@ -128,6 +130,9 @@ const Wrapper = styled.div`
     }
     .text-content {
       padding: 3.5rem 6rem;
+    }
+    h1 {
+      font-size: 3rem;
     }
   }
 
