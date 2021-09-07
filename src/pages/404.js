@@ -6,11 +6,11 @@ import Seo from "../components/Seo";
 
 const NotFoundPage = () => (
   <Wrapper>
-    <Seo title="Error" />
+  <Seo title="Error" />
     <div className="container">
       <StaticImage
         className="image"
-        src="../../assets/images/juiczing_home_1.png"
+        src="../assets/images/juiczing_home_1.png"
         alt="fruits in glasses"
         placeholder="blurred"
         layout="fullWidth"
