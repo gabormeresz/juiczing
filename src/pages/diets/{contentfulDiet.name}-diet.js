@@ -85,7 +85,6 @@ const Wrapper = styled.div`
   .image {
     height: 100%;
   }
-
   .title-container {
     padding: 1rem 1rem;
     background-color: var(--color-grass-light-transparent);
@@ -96,7 +95,6 @@ const Wrapper = styled.div`
   h1 span {
     font-weight: 300;
   }
-
   .text-content {
     padding: 3.5rem 2rem;
   }
@@ -105,6 +103,9 @@ const Wrapper = styled.div`
     padding-bottom: 1.5rem;
     color: var(--color-grass-light);
     font-size: 1.25rem;
+  }
+  h4:first-child {
+    padding-top: 0.5rem;
   }
   p {
     padding-bottom: 1rem;
@@ -115,6 +116,7 @@ const Wrapper = styled.div`
   ul {
     list-style-type: disc;
     padding-left: 1rem;
+    line-height: 1.2;
   }
 
   @media screen and (min-width: 768px) {
@@ -136,7 +138,6 @@ const Wrapper = styled.div`
     h4 {
       padding-top: 2.5rem;
       padding-bottom: 2rem;
-
       font-size: 1.5rem;
     }
   } ;

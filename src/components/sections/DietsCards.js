@@ -2,14 +2,16 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import slugify from "slugify";
 
 const DietsCards = ({ diets = [], showArrow, multipleColumns }) => {
   return (
     <Wrapper>
       <div className={multipleColumns ? "cards multiple-columns" : "cards"}>
         {diets.map((diet, index) => {
+          const slug = slugify(diet, { lower: true });
           return (
-            <Link to="/" key={index} className="type">
+            <Link to={`/diets/${slug}-diet`} key={index} className="type">
               <h4>
                 {diet} <span>diet</span>
               </h4>
