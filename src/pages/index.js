@@ -2,7 +2,7 @@ import React from "react";
 
 import Seo from "../components/Seo";
 import RecipeCategories from "../components/sections/RecipeCategories";
-import Nutrients from "../components/sections/Nutrients";
+import DietsTeaser from "../components/sections/DietsTeaser";
 import ArticlePromo from "../components/sections/ArticlePromo";
 import Hero from "../components/sections/Hero";
 import CalorieCalculator from "../components/sections/CalorieCalculator";
@@ -13,7 +13,7 @@ const IndexPage = () => (
     <Seo title="Home" />
     <Hero />
     <RecipeCategories />
-    <Nutrients />
+    <DietsTeaser />
     <ArticlePromo />
     <Recipes />
     <CalorieCalculator />
