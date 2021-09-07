@@ -16,7 +16,6 @@ const DietsTeaser = () => {
   const {
     allContentfulDiet: { distinct: featuredDiets },
   } = useStaticQuery(query);
-  console.log(featuredDiets);
 
   return (
     <Wrapper>
@@ -27,17 +26,17 @@ const DietsTeaser = () => {
         <div className="container">
           <div className="info">
             <p>
-              Consuming a low-calorie diet means you’re consuming fewer total
-              micronutrients. As humans, we’re designed to consume large amounts
-              of nutrient-dense calories to meet our body’s needs. When you’re
-              constantly restricting your caloric intake, it’s easy to become
-              malnourished.
+              Losing weight or eating better on your mind these days? There's no
+              shortage of weight loss diets grappling for your attention. And
+              the reality is that most diets — the good and bad — will help you
+              shed pounds in the short term.
             </p>
             <p>
-              When you’re consuming low-quality foods, likepasteurized non-fat
-              milk and other frankenfoods, you have to eat even more to obtain
-              the right amounts of nutrition. That’s how you get fat. And just
-              one more example of why food quality matters....
+              But the difference is in keeping them off, and that relies on
+              having a doable plan that you can stick with for life. Usually,
+              that means that diets that cut out entire food groups or impose
+              strict rules for eating. Learn more about the trending diets and
+              if any of them are good for you!
             </p>
           </div>
           <DietsCards diets={featuredDiets} showArrow />
@@ -60,6 +59,9 @@ const Wrapper = styled.section`
   h2 span {
     font-weight: 800;
     line-height: 1.2;
+  }
+  p:first-child {
+    padding-bottom: 1rem;
   }
 
   .container {
