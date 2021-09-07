@@ -2,7 +2,7 @@ import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { IoIosArrowRoundForward } from "react-icons/io";
-// import { Link } from "gatsby";
+import { Link } from "gatsby";
 
 const ArticlePromo = () => {
   return (
@@ -18,12 +18,13 @@ const ArticlePromo = () => {
         />
         <div className="text">
           <h3>how to make your green juice super nutritious?</h3>
-          {/* <Link to="/" className="link"> */}
-          <div className="link">
-            <button className="btn-transparent">coming soon...</button>
+          <Link
+            to="/articles/how-to-do-a-3-day-detox-juice-cleanse/"
+            className="link"
+          >
+            <button className="btn-transparent">read article</button>
             <IoIosArrowRoundForward className="arrow" size={"1.5em"} />
-          </div>
-          {/* </Link> */}
+          </Link>
         </div>
       </div>
     </Wrapper>
