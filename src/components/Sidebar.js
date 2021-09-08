@@ -116,36 +116,4 @@ Sidebar Animation
       opacity: 1;
     }
   }
-  .sidebar-icons li {
-    opacity: 0;
-    animation: slideUp 0.5s ease-in-out 0.3s forwards;
-  }
-  .sidebar-icons li a {
-    color: var(--clr-grey-1);
-  }
-  .sidebar-icons li:nth-of-type(1) {
-    animation-delay: 0.25s;
-  }
-  .sidebar-icons li:nth-of-type(2) {
-    animation-delay: 0.5s;
-  }
-  .sidebar-icons li:nth-of-type(3) {
-    animation-delay: 0.75s;
-  }
-  .sidebar-icons li:nth-of-type(4) {
-    animation-delay: 1s;
-  }
-  .sidebar-icons li:nth-of-type(5) {
-    animation-delay: 1.25s;
-  }
-  @keyframes slideUp {
-    0% {
-      transform: translateY(200px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
 `;
