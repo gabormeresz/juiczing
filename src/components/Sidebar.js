@@ -2,28 +2,38 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { AiOutlineClose } from "react-icons/ai";
+import { CSSTransition } from "react-transition-group";
 
 import navLinks from "../constants/navLinks";
 
 const Sidebar = ({ toggleSidebar, isSidebarOpen }) => {
   return (
     <Wrapper>
-      <div className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
-        <button type="button" className="close-btn" onClick={toggleSidebar}>
-          <AiOutlineClose />
-        </button>
-        <ul className={isSidebarOpen ? "sidebar-links" : null}>
-          {navLinks.map((navLink, index) => {
-            return (
-              <li key={index} onClick={toggleSidebar}>
-                <Link to={navLink.path} activeClassName="selected">
-                  {navLink.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <CSSTransition
+        className="sidebar"
+        in={isSidebarOpen}
+        unmountOnExit
+        mountOnEnter
+        timeout={{ enter: 300, exit: 500 }}
+        classNames="my-node"
+      >
+        <div>
+          <button type="button" className="close-btn" onClick={toggleSidebar}>
+            <AiOutlineClose />
+          </button>
+          <ul className={`sidebar-links`}>
+            {navLinks.map((navLink, index) => {
+              return (
+                <li key={index} onClick={toggleSidebar}>
+                  <Link to={navLink.path} activeClassName="selected">
+                    {navLink.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </CSSTransition>
     </Wrapper>
   );
 };
@@ -41,15 +51,28 @@ const Wrapper = styled.aside`
     z-index: 999;
     display: grid;
     place-items: center;
-    opacity: 0;
-    transition: var(--transition);
-    transform: translateX(-100%);
   }
 
-  .show-sidebar {
+  .my-node-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  .my-node-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 300ms;
+  }
+  .my-node-exit {
     opacity: 1;
     transform: translateX(0);
   }
+  .my-node-exit-active {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 300ms;
+    transition-delay: 200ms;
+  }
+
   .sidebar-links li {
     opacity: 0;
   }
@@ -89,7 +112,7 @@ Sidebar Animation
 ===============
 */
   .sidebar-links li {
-    animation: slideRight 0.3s ease-in-out 0.3s forwards;
+    animation: slideRight 0.25s ease-in-out 0.3s forwards;
   }
   .sidebar-links li:nth-of-type(1) {
     animation-delay: 0.15s;
@@ -108,12 +131,26 @@ Sidebar Animation
   }
   @keyframes slideRight {
     0% {
-      transform: translateX(-200px);
+      transform: translateX(-100%);
       opacity: 0;
     }
     100% {
       transform: translateX(0);
       opacity: 1;
+    }
+  }
+  .my-node-exit-active .sidebar-links li {
+    animation: slideLeft 0.4s ease-in-out forwards;
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
     }
   }
 `;
