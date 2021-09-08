@@ -213,7 +213,9 @@ const Wrapper = styled.div`
   }
 
   input:active,
-  input:focus {
+  input:focus,
+  select:active,
+  select:focus {
     outline: 2px solid var(--color-primary-4);
   }
 
