@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
-import { FaChevronCircleUp } from "react-icons/fa";
 import { IoChevronUpCircleSharp } from "react-icons/io5";
 
 const ScrollUpButton = () => {
@@ -8,7 +7,7 @@ const ScrollUpButton = () => {
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    console.log(scrolled);
+
     if (scrolled > 300) {
       setVisible(true);
     } else if (scrolled <= 300) {
@@ -16,14 +15,20 @@ const ScrollUpButton = () => {
     }
   };
 
-  const scrollToTop = () => {
+  const scrollToTop = useCallback(() => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  };
+  });
 
-  window.addEventListener("scroll", toggleVisible);
+  useEffect(() => {
+    console.log("effect runs");
+    window.addEventListener("scroll", toggleVisible);
+    return () => {
+      window.removeEventListener("scroll", toggleVisible);
+    };
+  }, []);
 
   return (
     <Wrapper>
