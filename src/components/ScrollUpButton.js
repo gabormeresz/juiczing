@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { IoChevronUpCircleSharp } from "react-icons/io5";
 
@@ -15,15 +15,14 @@ const ScrollUpButton = () => {
     }
   };
 
-  const scrollToTop = useCallback(() => {
+  const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-  });
+  };
 
   useEffect(() => {
-    console.log("effect runs");
     window.addEventListener("scroll", toggleVisible);
     return () => {
       window.removeEventListener("scroll", toggleVisible);
