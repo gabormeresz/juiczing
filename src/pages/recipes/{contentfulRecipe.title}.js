@@ -16,7 +16,16 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
   } = data.contentfulRecipe;
   const pathToImage = getImage(image);
 
-  const { calories, carbohydrates, fiber, fat, protein, sugar } = nutrition;
+  const {
+    calories,
+    carbohydrates,
+    fiber,
+    fat,
+    protein,
+    sugar,
+    portion,
+    portionUnit,
+  } = nutrition;
 
   return (
     <Wrapper>
@@ -76,16 +85,17 @@ const RecipeTemplate = ({ pageContext: { title }, data }) => {
                 );
               })}
             </div>
-            <div>
+            <div className="nutrition">
               <h4>nutrition</h4>
-              <p className="single-nutrition">Calories: {calories}Kcal</p>
-              <p className="single-nutrition">
-                Carbohydrates: {carbohydrates}g
+              <p>
+                Amount: {portion} {portionUnit}
               </p>
-              <p className="single-nutrition">Protein: {protein}g</p>
-              <p className="single-nutrition">Fat: {fat}g</p>
-              <p className="single-nutrition">Fiber: {fiber}g</p>
-              <p className="single-nutrition">Sugar: {sugar}g</p>
+              <p>Energy: {calories}Kcal</p>
+              <p>Carbohydrates: {carbohydrates}g</p>
+              <p>Protein: {protein}g</p>
+              <p>Fat: {fat}g</p>
+              <p>Fiber: {fiber}g</p>
+              <p>Sugar: {sugar}g</p>
             </div>
           </article>
         </section>
@@ -114,6 +124,8 @@ export const query = graphql`
           fat
           protein
           sugar
+          portion
+          portionUnit
         }
         tags
       }
@@ -141,6 +153,7 @@ const Wrapper = styled.div`
   .about-img {
     height: 100%;
     min-height: 300px;
+    max-height: 300px;
   }
 
   .recipe-tags {
@@ -183,6 +196,9 @@ const Wrapper = styled.div`
     .recipe-content {
       grid-template-columns: 3fr 2fr;
     }
+    .about-img {
+      max-height: 400px;
+    }
   }
 
   .single-instruction {
@@ -223,11 +239,10 @@ const Wrapper = styled.div`
   .single-ingredient:last-of-type {
     margin-bottom: 0;
   }
-  .single-nutrition {
+  .nutrition p {
     border-bottom: 1px solid var(--color-primary-4);
     margin-bottom: 0.75rem;
     color: var(--color-primary-1);
-    text-transform: capitalize;
   }
 
   h4 {
