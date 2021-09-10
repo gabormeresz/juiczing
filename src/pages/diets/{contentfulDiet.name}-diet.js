@@ -14,7 +14,7 @@ const DietTemplate = ({ data }) => {
   return (
     <Wrapper>
       <Seo
-        title={name}
+        title={`${name} diet`}
         //    description={description}
       />
       <div className="diet-page">
@@ -47,7 +47,7 @@ const Wrapper = styled.div`
   .text-content {
     padding: 3.5rem 2rem;
   }
-  
+
   @media screen and (min-width: 768px) {
     .text-content {
       padding: 3.5rem 6rem;
