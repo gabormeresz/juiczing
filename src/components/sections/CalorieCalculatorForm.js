@@ -2,14 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
-import ErrorFocus from "./CalorieCalculatorFormErrorFocus";
 
+import ErrorFocus from "./CalorieCalculatorFormErrorFocus";
 import { GiOfficeChair, GiWeightLiftingUp } from "react-icons/gi";
 import { BiRun } from "react-icons/bi";
 import { IoWalk } from "react-icons/io5";
-// import { IoInformationCircleOutline } from "react-icons/io5";
 
-const FormSchema = yup.object().shape({
+const formSchema = yup.object().shape({
   age: yup
     .number()
     .typeError("Please use only numbers to type your age")
@@ -114,7 +113,7 @@ const CalorieForm = props => {
           activity: "1.7",
           sex: "",
         }}
-        validationSchema={FormSchema}
+        validationSchema={formSchema}
         onSubmit={values => {
           props.onCalculate(values);
         }}
@@ -122,28 +121,28 @@ const CalorieForm = props => {
         {({ errors, touched, dirty, isValid }) => {
           return (
             <Form className="form">
-              <div className="age type">
+              <div className="form-control">
                 <label htmlFor="age">Your age *</label>
                 <Field name="age" />
                 <p className="error-message">
                   {errors.age && touched.age && errors.age}
                 </p>
               </div>
-              <div className="height type">
+              <div className="form-control">
                 <label htmlFor="height">Your height (cm) *</label>
                 <Field name="height" />
                 <p className="error-message">
                   {errors.height && touched.height && errors.height}
                 </p>
               </div>
-              <div className="weight type">
+              <div className="form-control">
                 <label htmlFor="weight">Your weight (kg) *</label>
                 <Field name="weight" />
                 <p className="error-message">
                   {errors.weight && touched.weight && errors.weight}
                 </p>
               </div>
-              <div className="sex type">
+              <div className="form-control">
                 <label htmlFor="sex">Sex *</label>
                 <Field name="sex" component="select">
                   <option defaultValue>select sex</option>
@@ -154,7 +153,7 @@ const CalorieForm = props => {
                   {errors.sex && touched.sex && errors.sex}
                 </p>
               </div>
-              <div className="activity type">
+              <div className="form-control">
                 <label htmlFor="activity">
                   Daily activity level {/*<IoInformationCircleOutline /> */}
                 </label>
@@ -187,7 +186,7 @@ const Wrapper = styled.div`
     row-gap: 10px;
   }
 
-  .type {
+  .form-control {
     display: flex;
     flex-direction: column;
     min-height: 85px;
