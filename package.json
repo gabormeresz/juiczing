@@ -6,6 +6,7 @@
   "author": "Gabor Meresz",
   "dependencies": {
     "@contentful/rich-text-types": "^15.3.0",
+    "axios": "^0.21.4",
     "babel-plugin-styled-components": "^1.13.2",
     "formik": "^2.2.9",
     "gatsby": "^3.13.0",
