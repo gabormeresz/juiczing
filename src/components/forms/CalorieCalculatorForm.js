@@ -35,21 +35,21 @@ const CalorieForm = props => {
             <Form className="form">
               <div className="form-control">
                 <label htmlFor="age">Your age *</label>
-                <Field name="age" />
+                <Field name="age" type="number" />
                 <p className="error-message">
                   {errors.age && touched.age && errors.age}
                 </p>
               </div>
               <div className="form-control">
                 <label htmlFor="height">Your height (cm) *</label>
-                <Field name="height" />
+                <Field name="height" type="number" />
                 <p className="error-message">
                   {errors.height && touched.height && errors.height}
                 </p>
               </div>
               <div className="form-control">
                 <label htmlFor="weight">Your weight (kg) *</label>
-                <Field name="weight" />
+                <Field name="weight" type="number" />
                 <p className="error-message">
                   {errors.weight && touched.weight && errors.weight}
                 </p>
@@ -118,6 +118,13 @@ const Wrapper = styled.div`
   select:active,
   select:focus {
     outline: 2px solid var(--color-primary-4);
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
   }
   .error-message {
     line-height: 1;
