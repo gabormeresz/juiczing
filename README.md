@@ -31,3 +31,5 @@ A React project with [Gatsby JS](https://www.gatsbyjs.com/) and [Contentful](htt
 - All icon is from [React Icons](https://react-icons.github.io/react-icons/)
 
 - Fonts are handled with [gatsby-plugin-webfonts](https://www.gatsbyjs.com/plugins/gatsby-plugin-webfonts/)
+
+- [Formspree](https://formspree.io/), [axios](https://www.npmjs.com/package/axios), [Formik](https://formik.org/) and [Yup](https://www.npmjs.com/package/yup) is used in the contact form
