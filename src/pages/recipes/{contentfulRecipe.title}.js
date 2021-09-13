@@ -8,7 +8,6 @@ import Seo from "../../components/Seo";
 
 const RecipeTemplate = ({ pageContext: { title }, data }) => {
   const {
-    // title,
     descriptionRich,
     description: { description },
     details: { ingredients, instructions, tags, nutrition },
@@ -143,19 +142,16 @@ const Wrapper = styled.div`
     display: grid;
     gap: 1rem;
   }
-
   .recipe-hero {
     display: grid;
     gap: 2rem;
     padding: 3rem 2rem;
   }
-
   .about-img {
     height: 100%;
     min-height: 300px;
     max-height: 300px;
   }
-
   .recipe-tags {
     text-transform: uppercase;
     display: flex;
@@ -163,20 +159,20 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     font-size: 0.75rem;
     font-weight: 800;
-  }
-  .recipe-tags span {
-    padding-right: 0.75rem;
-    letter-spacing: var(--spacing-mild);
-  }
-  .recipe-tags a {
-    background: var(--color-grass-light);
-    border-radius: var(--radius);
-    color: var(--color-primary-6);
-    padding: 0.25rem 0.75rem;
-    margin: 0 0.25rem;
-    text-transform: capitalize;
-  }
 
+    span {
+      padding-right: 0.75rem;
+      letter-spacing: var(--spacing-mild);
+    }
+    a {
+      background: var(--color-grass-light);
+      border-radius: var(--radius);
+      color: var(--color-primary-6);
+      padding: 0.25rem 0.75rem;
+      margin: 0 0.25rem;
+      text-transform: capitalize;
+    }
+  }
   .recipe-content {
     padding: 2rem 2rem;
     padding-top: 0rem;
@@ -187,65 +183,64 @@ const Wrapper = styled.div`
     padding: 0.5rem 0;
   }
 
+  .single-instruction {
+    padding-bottom: 1rem;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+    header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.5rem;
+      align-items: center;
+
+      p {
+        text-transform: uppercase;
+        font-weight: 700;
+        color: var(--color-grass-light);
+        margin-bottom: 0;
+      }
+      div {
+        height: 1px;
+        background: var(--color-primary-4);
+      }
+    }
+  }
+  .second-column {
+    display: grid;
+    row-gap: 2.5rem;
+  }
+  .single-ingredient {
+    border-bottom: 1px solid var(--color-primary-4);
+    margin-bottom: 0.75rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  .nutrition {
+    p {
+      border-bottom: 1px solid var(--color-primary-4);
+      margin-bottom: 0.75rem;
+      color: var(--color-primary-1);
+    }
+  }
+  h4 {
+    padding-bottom: 1rem;
+  }
+
   @media screen and (min-width: 768px) {
     .recipe-hero {
       grid-template-columns: 1fr 1fr;
       align-items: center;
       min-height: 300px;
     }
-    .recipe-content {
-      grid-template-columns: 3fr 2fr;
-    }
     .about-img {
       max-height: 400px;
     }
-  }
-
-  .single-instruction {
-    padding-bottom: 1rem;
-  }
-
-  .single-instruction:last-of-type {
-    padding-bottom: 0;
-  }
-
-  .single-instruction header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  .single-instruction header p {
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--color-grass-light);
-    margin-bottom: 0;
-  }
-
-  .single-instruction header div {
-    height: 1px;
-    background: var(--color-primary-4);
-  }
-
-  .second-column {
-    display: grid;
-    row-gap: 2.5rem;
-  }
-
-  .single-ingredient {
-    border-bottom: 1px solid var(--color-primary-4);
-    margin-bottom: 0.75rem;
-  }
-  .single-ingredient:last-of-type {
-    margin-bottom: 0;
-  }
-  .nutrition p {
-    border-bottom: 1px solid var(--color-primary-4);
-    margin-bottom: 0.75rem;
-    color: var(--color-primary-1);
-  }
-
-  h4 {
-    padding-bottom: 1rem;
+    .recipe-content {
+      grid-template-columns: 3fr 2fr;
+    }
   }
 `;

@@ -6,7 +6,7 @@ import Seo from "../components/Seo";
 
 const NotFoundPage = () => (
   <Wrapper>
-  <Seo title="Error" />
+    <Seo title="Error" />
     <div className="container">
       <StaticImage
         className="image"
@@ -16,7 +16,7 @@ const NotFoundPage = () => (
         layout="fullWidth"
       />
       <div className="overlay"></div>
-      <div className="container-text">
+      <div className="text">
         <h1>404</h1>
         <h4>Page not found</h4>
       </div>
@@ -35,27 +35,23 @@ const Wrapper = styled.div`
   .image {
     grid-area: 1/1;
   }
-  .container-text {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  h1,
-  h4 {
-    color: var(--color-primary-6);
-    text-shadow: var(--shadow-dark-intensive);
-  }
-  h1 {
-    font-size: 5rem;
-  }
   .overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    grid-area: 1/1;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.25);
+  }
+  .text {
+    grid-area: 1/1;
+    margin: auto;
+    z-index: 1;
+
+    h1,
+    h4 {
+      color: var(--color-primary-6);
+      text-shadow: var(--shadow-dark-intensive);
+    }
+    h1 {
+      font-size: 5rem;
+    }
   }
 `;

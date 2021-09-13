@@ -15,7 +15,7 @@ const Ebook = () => {
         </h3>
         <div className="image">
           <StaticImage
-            src="../../assets/images/ebook.png"
+            src="../assets/images/ebook.png"
             alt="detox guide book"
             placeholder="blurred"
             layout="fullWidth"
@@ -35,10 +35,9 @@ const Wrapper = styled.section`
   .ebook {
     background-color: var(--color-primary-5);
     display: grid;
-    padding: 40px 40px;
-    gap: 30px;
+    padding: 2.5rem 2.5rem;
+    gap: 1.875rem;
   }
-
   h3 {
     font-weight: 400;
     font-size: 1.5rem;
@@ -49,7 +48,7 @@ const Wrapper = styled.section`
     }
   }
   .image {
-    padding: 0px 20px;
+    padding: 0 1.25rem;
     place-items: center;
   }
   .btn {
@@ -63,12 +62,12 @@ const Wrapper = styled.section`
         "img text"
         "img btn";
       grid-template-columns: 2fr 3fr;
-      row-gap: 20px;
-      column-gap: 50px;
+      row-gap: 1.25rem;
+      column-gap: 3.125rem;
     }
     .image {
       grid-area: img;
-      padding: 0px 0px;
+      padding: 0;
     }
     .text {
       grid-area: text;
@@ -78,12 +77,13 @@ const Wrapper = styled.section`
       grid-area: btn;
     }
     .btn {
-      margin-left: 0px;
+      margin-left: 0;
     }
   }
+
   @media screen and (min-width: 1200px) {
     .ebook {
-      padding: 40px 60px;
+      padding: 2.5rem 3.75rem;
     }
   }
 `;

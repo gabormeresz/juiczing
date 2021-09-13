@@ -51,21 +51,19 @@ const Wrapper = styled.div`
     z-index: 10;
     cursor: pointer;
   }
-
   .scroll-button {
     display: none;
     font-size: 5rem;
     color: var(--color-grass-light);
     transition: var(--transition-fast);
     padding: 1rem;
-  }
-  .scroll-button.visible {
-    display: block;
+
+    &.visible {
+      display: block;
+    }
   }
 
   @media screen and (min-width: 768px) {
-    .scroll-button {
-    }
     .scroll-button:hover {
       padding: 0.5rem;
     }

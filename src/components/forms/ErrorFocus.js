@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useFormikContext } from "formik";
 
 const ErrorFocus = props => {
+  const { onError } = props;
   // Get the context for the Formik form this component is rendered into.
   const { isSubmitting, isValidating, errors } = useFormikContext();
 
@@ -11,9 +12,9 @@ const ErrorFocus = props => {
 
     // Whenever there are errors and the form is submitting but finished validating.
     if (keys.length > 0 && isSubmitting && !isValidating) {
-      props.onError();
+      onError();
     }
-  }, [isSubmitting, isValidating, errors]);
+  }, [isSubmitting, isValidating, errors, onError]);
 
   // This component does not render anything by itself.
   return null;

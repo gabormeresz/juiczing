@@ -3,13 +3,12 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 
 import Seo from "../../components/Seo";
-import DietsCards from "../../components/sections/DietsCards";
+import DietsCards from "../../components/DietsCards";
 
 const dietsPage = ({ data }) => {
   const {
     allContentfulDiet: { distinct: diets },
   } = data;
-  console.log(diets);
 
   return (
     <Wrapper>

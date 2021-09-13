@@ -27,15 +27,6 @@ const DietsCards = ({ diets = [], showArrow, multipleColumns }) => {
 export default DietsCards;
 
 const Wrapper = styled.div`
-  /* display: grid; */
-
-  /* .cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-  } */
-
   .cards {
     display: grid;
     width: 100%;
@@ -46,27 +37,27 @@ const Wrapper = styled.div`
   .type {
     display: flex;
     align-items: center;
-    padding: 25px 40px;
+    padding: 1.5rem 2.5rem;
     width: 100%;
     background-color: var(--color-primary-5);
     transition: var(--transition-fast);
-  }
 
-  .type:hover {
-    background-color: var(--color-primary-4);
-  }
-
-  .type h4 span {
-    font-weight: 400;
-    line-height: 1.2;
+    &:hover {
+      background-color: var(--color-primary-4);
+    }
+    h4 span {
+      font-weight: 400;
+      line-height: 1.2;
+    }
   }
 
   @media screen and (min-width: 768px) {
     .cards.multiple-columns {
       grid-template-columns: 1fr 1fr 1fr;
-    }
-    .cards.multiple-columns .type {
-      min-height: 100px;
+
+      .type {
+        min-height: 100px;
+      }
     }
   }
 `;

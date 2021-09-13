@@ -29,15 +29,17 @@ const Wrapper = styled.div`
     padding-bottom: 1.5rem;
     color: var(--color-grass-light);
     font-size: 1.25rem;
-  }
-  h4:first-child {
-    padding-top: 0.5rem;
+
+    &:first-child {
+      padding-top: 0.5rem;
+    }
   }
   p {
     padding-bottom: 1rem;
-  }
-  p span {
-    font-weight: 700;
+
+    span {
+      font-weight: 700;
+    }
   }
   ul {
     list-style-type: disc;

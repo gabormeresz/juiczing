@@ -1,7 +1,7 @@
 import React from "react";
 
 import Seo from "../../components/Seo";
-import Recipes from "../../components/sections/Recipes";
+import Recipes from "../../components/recipes/Recipes";
 
 const recipesPage = props => {
   return (

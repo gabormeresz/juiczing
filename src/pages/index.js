@@ -1,12 +1,12 @@
 import React from "react";
 
 import Seo from "../components/Seo";
-import RecipeCategories from "../components/sections/RecipeCategories";
-import DietsTeaser from "../components/sections/DietsTeaser";
-import ArticlePromo from "../components/sections/ArticlePromo";
-import Hero from "../components/sections/Hero";
-import CalorieCalculator from "../components/sections/CalorieCalculator";
-import Recipes from "../components/sections/Recipes";
+import RecipeCategories from "../components/recipes/RecipeCategories";
+import DietsTeaser from "../components/DietsTeaser";
+import ArticlePromo from "../components/ArticlePromo";
+import Hero from "../components/Hero";
+import CalorieCalculator from "../components/CalorieCalculator";
+import Recipes from "../components/recipes/Recipes";
 
 const IndexPage = () => (
   <>

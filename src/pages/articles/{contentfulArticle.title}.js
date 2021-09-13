@@ -3,8 +3,8 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 
 import Seo from "../../components/Seo";
-import RichTextContent from "../../components/sections/RichtextContent";
-import ArticleHero from "../../components/sections/ArticleHero";
+import RichTextContent from "../../components/RichtextContent";
+import ArticleHero from "../../components/ArticleHero";
 
 const ArticleTemplate = ({ data }) => {
   const {
@@ -13,10 +13,7 @@ const ArticleTemplate = ({ data }) => {
 
   return (
     <Wrapper>
-      <Seo
-        title={title}
-        //    description={description}
-      />
+      <Seo title={title} />
       <div className="article-page">
         <ArticleHero image={image} title={title} titleIsLong />
         <div className="text-content">

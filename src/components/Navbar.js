@@ -35,17 +35,18 @@ const Navbar = ({ toggleSidebar }) => {
 export default Navbar;
 
 const Wrapper = styled.nav`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  z-index: 100;
-  background: var(--color-primary-6);
-  box-shadow: var(--shadow-light);
-
+  & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    background: var(--color-primary-6);
+    box-shadow: var(--shadow-light);
+  }
   .nav-center {
     width: 90vw;
     margin: 0 auto;
@@ -55,7 +56,6 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     align-items: center;
   }
-
   .toggle-btn {
     font-size: 2rem;
     background: transparent;
@@ -64,41 +64,43 @@ const Wrapper = styled.nav`
     cursor: pointer;
     transition: var(--transition);
   }
-
   .nav-links {
     display: none;
   }
+
   @media screen and (min-width: 768px) {
+    .nav-center {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+    }
     .toggle-btn {
       display: none;
     }
     .nav-links {
       display: flex;
       justify-content: flex-end;
-    }
 
-    .nav-links a {
-      margin-right: 1.5rem;
-      text-transform: uppercase;
-      color: var(--color-primary-1);
-      font-weight: bold;
-      letter-spacing: var(--spacing);
-      transition: var(--transition-fast);
-      padding: 0.5rem 0;
-    }
-    .nav-links a.selected {
-      box-shadow: 0px 2px var(--color-primary-1);
-    }
-    .nav-links a.selected:hover {
-      box-shadow: 0px 2px var(--color-grass-dark);
-    }
-    .nav-links a:hover {
-      color: var(--color-grass-dark);
-    }
-    .nav-center {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: center;
+      a {
+        margin-right: 1.5rem;
+        text-transform: uppercase;
+        color: var(--color-primary-1);
+        font-weight: bold;
+        letter-spacing: var(--spacing);
+        transition: var(--transition-fast);
+        padding: 0.5rem 0;
+
+        &:hover {
+          color: var(--color-grass-dark);
+        }
+      }
+      a.selected {
+        box-shadow: 0 2px var(--color-primary-1);
+
+        &:hover {
+          box-shadow: 0 2px var(--color-grass-dark);
+        }
+      }
     }
   }
 `;

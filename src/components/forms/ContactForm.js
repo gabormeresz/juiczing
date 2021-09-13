@@ -2,24 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { Formik, Form, Field } from "formik";
-import * as yup from "yup";
 
-const formSchema = yup.object().shape({
-  email: yup
-    .string()
-    .required("Email is a mandatory field")
-    .email("Must be a valid email"),
-  name: yup
-    .string()
-    .required("Name is a mandatory field")
-    .min(3, "Name should be at least 3 characters")
-    .max(50, "Name should be maximum 50 characters"),
-  message: yup
-    .string()
-    .required("Message is a mandatory field")
-    .min(10, "Please write us a message between 10 and 250 characters.")
-    .max(250, "Please write us a message between 10 and 250 characters."),
-});
+import { contactFormValidator } from "../../assets/helpers/contactFormValidator";
+
+const formSchema = contactFormValidator;
 
 const ContactForm = () => {
   const [serverState, setServerState] = useState();
@@ -102,26 +88,23 @@ export default ContactForm;
 const Wrapper = styled.div`
   form {
     display: grid;
-    row-gap: 10px;
+    row-gap: 0.625rem;
     padding-top: 2.25rem;
   }
-
   .form-control {
     display: flex;
     flex-direction: column;
     min-height: 85px;
     align-items: start;
     justify-items: stretch;
-  }
 
-  .form-control.msg {
-    min-height: 150px;
+    &.msg {
+      min-height: 150px;
+    }
   }
-
   label {
     font-weight: 400;
   }
-
   input,
   textarea {
     border: none;
@@ -129,26 +112,22 @@ const Wrapper = styled.div`
     width: 100%;
     font-size: 1rem;
   }
-
   input {
     height: 40px;
     padding-left: 1rem;
   }
-
   textarea {
     resize: vertical;
     overflow: auto;
     min-height: 6rem;
     padding: 1rem;
   }
-
   input:active,
   input:focus,
   textarea:active,
   textarea:focus {
     outline: 2px solid var(--color-primary-4);
   }
-
   .error-message {
     line-height: 1;
     align-self: flex-end;
@@ -157,12 +136,10 @@ const Wrapper = styled.div`
     color: var(--color-red-light);
     padding-top: 5px;
   }
-
   .submitFeedback {
     min-height: 1.25rem;
     font-weight: 700;
   }
-
   .errorMsg {
     color: var(--color-red-light);
   }
@@ -177,7 +154,6 @@ const Wrapper = styled.div`
     .submitFeedback {
       min-height: 1.5rem;
     }
-
     .btn {
       margin-right: auto;
     }

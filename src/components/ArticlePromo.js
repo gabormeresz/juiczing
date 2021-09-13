@@ -7,25 +7,23 @@ import { Link } from "gatsby";
 const ArticlePromo = () => {
   return (
     <Wrapper>
-      <div className="image-wrapper">
-        <StaticImage
-          className="image"
-          src="../../assets/images/juiczing_home_2.png"
-          alt="fresh vegetable drink"
-          placeholder="blurred"
-          layout="fullWidth"
-          objectPosition="left"
-        />
-        <div className="text">
-          <h3>how to make your green juice super nutritious?</h3>
-          <Link
-            to="/articles/how-to-do-a-3-day-detox-juice-cleanse/"
-            className="link"
-          >
-            <button className="btn-transparent">read article</button>
-            <IoIosArrowRoundForward className="arrow" size={"1.5em"} />
-          </Link>
-        </div>
+      <StaticImage
+        className="image"
+        src="../assets/images/juiczing_home_2.png"
+        alt="fresh vegetable drink"
+        placeholder="blurred"
+        layout="fullWidth"
+        objectPosition="left"
+      />
+      <div className="text-container">
+        <h3>how to make your green juice super nutritious?</h3>
+        <Link
+          to="/articles/how-to-do-a-3-day-detox-juice-cleanse/"
+          className="link"
+        >
+          <button className="btn-transparent">read article</button>
+          <IoIosArrowRoundForward className="arrow" size={"1.5em"} />
+        </Link>
       </div>
     </Wrapper>
   );
@@ -34,21 +32,19 @@ const ArticlePromo = () => {
 export default ArticlePromo;
 
 const Wrapper = styled.div`
-  .image-wrapper {
+  & {
     display: grid;
+    height: 300px;
   }
   .image {
     grid-area: 1/1;
-    height: 300px;
   }
-  .text {
-    z-index: 2;
+  .text-container {
     grid-area: 1/1;
-    align-items: center;
-    justify-items: start;
+    z-index: 2;
     display: grid;
     grid-template-rows: 7fr 3fr;
-    padding: 20px 40% 0px 20px;
+    padding: 1.25rem 40% 0 1.25rem;
   }
   h3 {
     color: var(--color-primary-6);
@@ -61,7 +57,7 @@ const Wrapper = styled.div`
     align-self: start;
     display: flex;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 0.625rem;
   }
   .arrow {
     padding-bottom: 1px;
@@ -69,19 +65,20 @@ const Wrapper = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    .text {
-      padding: 20px 55% 20px 40px;
+    .text-container {
+      padding: 1.25rem 55% 1.25rem 2.5rem;
     }
     h3 {
       font-size: 1.7rem;
     }
   }
+
   @media screen and (min-width: 1200px) {
-    .image {
+    & {
       height: 400px;
     }
-    .text {
-      padding: 20px 62% 20px 60px;
+    .text-container {
+      padding: 1.25rem 62% 1.25rem 3.75rem;
     }
     h3 {
       font-size: 2rem;

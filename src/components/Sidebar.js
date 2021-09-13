@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { AiOutlineClose } from "react-icons/ai";
@@ -52,7 +52,6 @@ const Wrapper = styled.aside`
     display: grid;
     place-items: center;
   }
-
   .my-node-enter {
     opacity: 0;
     transform: translateX(-100%);
@@ -72,24 +71,25 @@ const Wrapper = styled.aside`
     transition: all 300ms;
     transition-delay: 200ms;
   }
-
   .sidebar-links li {
     opacity: 0;
-  }
-  .sidebar-links li a {
-    display: block;
-    text-align: center;
-    text-transform: capitalize;
-    color: var(--color-primary-1);
-    letter-spacing: var(--spacing);
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
-    transition: var(--transition-fast);
-    border-radius: var(--radius);
-  }
-  .sidebar-links li a:hover {
-    background: var(--color-grass-light);
-    color: var(--color-primary-6);
+
+    a {
+      display: block;
+      text-align: center;
+      text-transform: capitalize;
+      color: var(--color-primary-1);
+      letter-spacing: var(--spacing);
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+      transition: var(--transition-fast);
+      border-radius: var(--radius);
+
+      &:hover {
+        background: var(--color-grass-light);
+        color: var(--color-primary-6);
+      }
+    }
   }
   .close-btn {
     position: absolute;
@@ -101,16 +101,21 @@ const Wrapper = styled.aside`
     color: var(--color-primary-1);
     cursor: pointer;
   }
+
   @media screen and (min-width: 768px) {
     .sidebar {
       transform: translateX(-100%);
     }
   }
+
   /*
 ===============
-Sidebar Animation
+Sidebar Links Animation
 ===============
 */
+
+  /* Enter animation*/
+
   .sidebar-links li {
     animation: slideRight 0.25s ease-in-out 0.3s forwards;
   }
@@ -129,6 +134,7 @@ Sidebar Animation
   .sidebar-links li:nth-of-type(5) {
     animation-delay: 0.75s;
   }
+
   @keyframes slideRight {
     0% {
       transform: translateX(-100%);
@@ -139,6 +145,9 @@ Sidebar Animation
       opacity: 1;
     }
   }
+
+  /* Exit animation */
+
   .my-node-exit-active .sidebar-links li {
     animation: slideLeft 0.4s ease-in-out forwards;
   }

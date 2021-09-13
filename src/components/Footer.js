@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Ebook from "../components/sections/Ebook";
 
+import Ebook from "../components/Ebook";
 import logo from "../assets/images/logo_juiczing_dark_bg.svg";
 
 const Footer = () => {
@@ -27,15 +27,15 @@ const Wrapper = styled.footer`
     text-align: center;
     display: grid;
     place-items: center;
-    padding-top: 10px;
+    padding-top: 0.625rem;
+  }
+  .footer-logo {
+    height: 80px;
   }
   h4 {
     margin-top: 0rem;
     color: var(--color-primary-6);
     font-weight: 400;
     text-transform: none;
-  }
-  .footer-logo {
-    height: 80px;
   }
 `;

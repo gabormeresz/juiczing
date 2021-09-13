@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="hero">
         <StaticImage
           className="image"
-          src="../../assets/images/juiczing_home_1.png"
+          src="../assets/images/juiczing_home_1.png"
           alt="fruits in glasses"
           placeholder="blurred"
           layout="fullWidth"
@@ -28,36 +28,30 @@ export default Hero;
 
 const Wrapper = styled.div`
   .hero {
-    position: relative;
+    display: grid;
     overflow: hidden;
-  }
-
-  .image {
-    grid-area: 1/1;
     height: 350px;
   }
-
-  h1 {
-    padding: 0.5rem 0.625rem;
-    position: absolute;
-    color: var(--color-primary-6);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    text-align: center;
-  }
-  h1 span {
-    font-weight: 300;
-    line-height: 1.1;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
+  .image {
+    grid-area: 1/1;
     height: 100%;
+  }
+  .overlay {
+    grid-area: 1/1;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.4);
+  }
+  h1 {
+    grid-area: 1/1;
+    z-index: 2;
+    padding: 0.5rem 0.625rem;
+    color: var(--color-primary-6);
+    margin: auto;
+    text-align: center;
+
+    span {
+      font-weight: 300;
+      line-height: 1.1;
+    }
   }
 `;
