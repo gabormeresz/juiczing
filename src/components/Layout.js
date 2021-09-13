@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
-import Footer from "./Footer";
+import GlobalStyles from "../assets/styles/GlobalStyles";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import Footer from "./Footer";
 import ScrollUpButton from "./ScrollUpButton";
 
 const Layout = ({ children }) => {
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <GlobalStyles />
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <main>{children}</main>
