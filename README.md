@@ -28,7 +28,7 @@ A React project with [Gatsby JS](https://www.gatsbyjs.com/) and [Contentful](htt
 
 - Layout is wrapped with Gatsby SSR API's and Gatsby Browser API's _wrapPageElement_
 
-- All icon is from [React Icons](https://react-icons.github.io/react-icons/)
+- All icons are from [React Icons](https://react-icons.github.io/react-icons/)
 
 - Fonts are handled with [gatsby-plugin-webfonts](https://www.gatsbyjs.com/plugins/gatsby-plugin-webfonts/)
 
